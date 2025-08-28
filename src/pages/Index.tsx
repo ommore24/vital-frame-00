@@ -2,8 +2,6 @@ import { PatientInfoCard } from "@/components/PatientInfoCard";
 import { OngoingTreatment } from "@/components/OngoingTreatment";
 import { PastTreatments } from "@/components/PastTreatments";
 import { MedicalHistory } from "@/components/MedicalHistory";
-import { DocumentsSection } from "@/components/DocumentsSection";
-import { EmergencyInfo } from "@/components/EmergencyInfo";
 import { Navbar } from "@/components/Navbar";
 
 const Index = () => {
@@ -29,12 +27,10 @@ const Index = () => {
             <div className="space-y-6">
               <OngoingTreatment />
               <MedicalHistory />
-              <EmergencyInfo />
             </div>
             
             <div className="space-y-6">
               <PastTreatments />
-              <DocumentsSection />
             </div>
           </div>
         </div>
