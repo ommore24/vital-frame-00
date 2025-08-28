@@ -1,5 +1,6 @@
-import { User, Menu, X } from "lucide-react";
+import { User, Menu, X, FileText, AlertCircle, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -11,6 +12,7 @@ import {
 import { useState } from "react";
 
 export const Navbar = () => {
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -30,12 +32,30 @@ export const Navbar = () => {
           <div className="flex items-center space-x-4">
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-6">
-              <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">
-                My Profile
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                My Appointments
-              </a>
+              <Button 
+                variant="ghost" 
+                className="flex items-center gap-2"
+                onClick={() => navigate("/")}
+              >
+                <Home className="w-4 h-4" />
+                Profile
+              </Button>
+              <Button 
+                variant="ghost" 
+                className="flex items-center gap-2"
+                onClick={() => navigate("/documents")}
+              >
+                <FileText className="w-4 h-4" />
+                Documents
+              </Button>
+              <Button 
+                variant="ghost" 
+                className="flex items-center gap-2"
+                onClick={() => navigate("/emergency")}
+              >
+                <AlertCircle className="w-4 h-4" />
+                Emergency
+              </Button>
             </div>
 
             {/* User Profile */}
@@ -93,20 +113,39 @@ export const Navbar = () => {
         <div className="container mx-auto px-4 py-4 space-y-4">
           {/* Mobile Navigation Links */}
           <div className="space-y-2">
-            <a 
-              href="#" 
-              className="block px-3 py-2 text-foreground hover:bg-muted rounded-md font-medium"
-              onClick={() => setIsMobileMenuOpen(false)}
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
+              onClick={() => {
+                navigate("/");
+                setIsMobileMenuOpen(false);
+              }}
             >
-              My Profile
-            </a>
-            <a 
-              href="#" 
-              className="block px-3 py-2 text-muted-foreground hover:bg-muted rounded-md"
-              onClick={() => setIsMobileMenuOpen(false)}
+              <Home className="w-4 h-4 mr-2" />
+              Profile
+            </Button>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
+              onClick={() => {
+                navigate("/documents");
+                setIsMobileMenuOpen(false);
+              }}
             >
-              My Appointments
-            </a>
+              <FileText className="w-4 h-4 mr-2" />
+              Documents
+            </Button>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
+              onClick={() => {
+                navigate("/emergency");
+                setIsMobileMenuOpen(false);
+              }}
+            >
+              <AlertCircle className="w-4 h-4 mr-2" />
+              Emergency
+            </Button>
           </div>
 
           {/* Mobile User Profile */}
