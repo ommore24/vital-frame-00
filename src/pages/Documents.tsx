@@ -15,7 +15,9 @@ import {
   Calendar,
   Image,
   FileSpreadsheet,
-  File
+  File,
+  FileImage,
+  Activity
 } from "lucide-react";
 
 export const Documents = () => {
@@ -28,7 +30,7 @@ export const Documents = () => {
       type: "Lab Report",
       size: "1.2 MB",
       format: "PDF",
-      icon: File
+      icon: Activity
     },
     { 
       name: "Chest X-Ray", 
@@ -36,7 +38,7 @@ export const Documents = () => {
       type: "Imaging",
       size: "5.8 MB",
       format: "DICOM",
-      icon: Image
+      icon: FileImage
     },
     { 
       name: "Prescription - Dr. Chen", 
@@ -44,7 +46,7 @@ export const Documents = () => {
       type: "Prescription",
       size: "0.8 MB",
       format: "PDF",
-      icon: File
+      icon: FileText
     },
     { 
       name: "Discharge Summary", 
@@ -52,7 +54,7 @@ export const Documents = () => {
       type: "Summary",
       size: "1.1 MB",
       format: "PDF",
-      icon: File
+      icon: FileText
     },
     { 
       name: "MRI Scan Report", 
@@ -60,7 +62,7 @@ export const Documents = () => {
       type: "Imaging",
       size: "12.3 MB",
       format: "DICOM",
-      icon: Image
+      icon: FileImage
     },
     { 
       name: "Lab Results Comparison", 
